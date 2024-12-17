@@ -15,7 +15,7 @@ app.use(express.json());
 app.post('/starOneToBestFlat/', async (req, res) => {
     // const { objectId } = req.body;
 
-    // const objectId  = req.body[0].objectId;
+    const objectId  = req.body[0].objectId;
 
     try {
         const contactProperties = [
@@ -42,7 +42,7 @@ app.post('/starOneToBestFlat/', async (req, res) => {
 
         if (contact.estado_decumentacion_docusign !== 'Completada') {
             return res.status(400).json({
-                message: 'No puede enviarse la información a BestFlat del cliente: ' + contact.firstName + ' ' + contact.lastName
+                message: 'No puede enviarse la información a BestFlat del cliente: ' + objectId
             });
         }
 
