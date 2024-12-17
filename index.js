@@ -15,7 +15,7 @@ app.use(express.json());
 app.post('/starOneToBestFlat/', async (req, res) => {
     // const { objectId } = req.body;
 
-    const objectId  = req.body[0].objectId;
+    // const objectId  = req.body[0].objectId;
 
     try {
         const contactProperties = [
@@ -72,7 +72,8 @@ app.post('/starOneToBestFlat/', async (req, res) => {
         try {
             const externalApiResponse = await axios.post('https://www.bestflat.com/api/registrar-agencia', dataToSend, {
                 headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'x-api-key': 'Mbhmjf3uE7vivbacf2Q3'
                 }
             });
 
