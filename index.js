@@ -29,7 +29,8 @@ app.post('/starOneToBestFlat/', async (req, res) => {
             'cif_nif',
             'representante_legal',
             'address',
-            'delegaci_n_barrio'
+            'delegaci_n_barrio',
+            'agente'
         ];
 
         const contactResponse = await hubspotClient.crm.contacts.basicApi.getById(
@@ -53,7 +54,7 @@ app.post('/starOneToBestFlat/', async (req, res) => {
             cif: contact.cif_nif || undefined,
             representante_legal: contact.representante_legal || undefined,
             dni_representante: contact.dni_representante_legal || undefined,
-            // agente: contact. || undefined,
+            agente: contact.agente || undefined,
             direccion: contact.address || undefined,
             delegacion: contact.delegaci_n_barrio || undefined,
             telefono: contact.phone || undefined,
